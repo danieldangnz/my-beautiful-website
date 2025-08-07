@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css" >
+</head>
+
+<body>
+    <header class="centralize-vertical">
+        <h1>My Beautiful Website</h1>
+    </header>
+
+    <nav class="centralize-vertical">
+        <div>
+            <button>  <a href="index.html">HOME</a>            </button>
+            <button>  <a href="about-us.html">ABOUT US</a>     </button>
+            <button>  <a href="contact-us.html">CONTACT US</a> </button>
+        </div>
+    </nav>
+
+    <main>
+        <h1 id="title-text">HOME PAGE</h1>
+        <button onclick="sayHi()">Click me!</button>
+        <button onclick="hide()">Hide the text "HOME PAGE"</button>
+    </main>
+
+    <script>
+        //Javascript function
+        function sayHi() {
+            alert("Hi! Have a good day!");
+        }
+
+        function hide() {
+            //Hide the text "HOME PAGE"
+            document.getElementById('title-text').style.display = 'none';
+        }
+
+    </script>
+
+    <footer class="centralize-vertical">
+        <p>ITWD5.130: WEBSITE DEVELOPMENT <br>Created by Daniel Dang</p>
+    </footer>
+</body>
+</html>

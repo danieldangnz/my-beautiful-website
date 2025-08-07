@@ -1,0 +1,54 @@
+/*Define styles for our website*/
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+/*Create our own selector*/
+.centralize-vertical {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Define styles for header*/
+header {
+	background-color: yellow;
+	height: 20vh;
+}
+
+
+/*Define styles for nav*/
+nav {
+	background-color: darkblue;
+	height: 10vh;
+}
+
+nav button {
+    padding: 10px;
+    margin: 5px;
+}
+
+nav button a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/*Define styles for main*/
+main {
+	background-color: white;
+	min-height: 60vh;
+}
+
+/*Defines styles for footer*/
+footer {
+	background-color: yellow;
+	height: 10vh;
+}
+
+footer p {
+    text-align: center;
+    font-weight: bold;
+}
