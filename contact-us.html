@@ -25,10 +25,42 @@
 
     <main>
         <h1>CONTACT US PAGE</h1>
+        
+        <!-- Add this inside your <main> tag or wherever you want to display messages -->
+        <div id="messagesContainer"></div>
+    
+        <script type="module">
+          // filepath: c:\Users\ddang\Desktop\2025-RESEARCHES\7-AI-pair programming or AI assistant Coding\w3-demo\index.html
+          import { getMessageFromDB } from './JS/database.js';
+    
+          async function displayMessages() {
+            const messages = await getMessageFromDB();
+            const container = document.getElementById('messagesContainer');
+            if (messages.length === 0) {
+              container.innerHTML = '<p>No messages found.</p>';
+              return;
+            }
+            container.innerHTML = messages.map(msg => `
+              <div class="message">
+                <strong>${msg.username || 'Anonymous'}:</strong>
+                <span>${msg.content}</span>
+                <em>${new Date(msg.created_at).toLocaleString()}</em>
+              </div>
+            `).join('');
+          }
+    
+          displayMessages();
+        </script>
+    
+    
+        <script src="JS/main.js" type="module"></script>
+        <script src="JS/database.js" type="module"></script>
+        
     </main>
 
     <footer class="centralize-vertical">
         <p>ITWD5.130: WEBSITE DEVELOPMENT <br>Created by Daniel Dang.</p>
     </footer>
 </body>
+
 </html>
