@@ -92,6 +92,17 @@
         });
 
 
+        async function getAllMessagesAsJSON() {
+          const messages = await getMessageFromDB();
+          // Convert messages array to JSON string
+          const messagesJSON = JSON.stringify(messages, null, 2);
+          return messagesJSON;
+        }
+        
+        // Example usage:
+        getAllMessagesAsJSON().then(json => {
+          console.log(json);
+        });
 
 
             
@@ -106,6 +117,7 @@
 </body>
 
 </html>
+
 
 
 
