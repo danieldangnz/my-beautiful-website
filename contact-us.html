@@ -45,8 +45,9 @@
             }
             container.innerHTML = messages.map(msg => `
               <div class="message">
-                <strong>${msg.username || 'Anonymous'}:</strong>
-                <span>${msg.content}</span>
+                <strong>${msg.name || 'Anonymous'}:</strong>
+                <span>${msg.email}</span>
+                <span>${msg.message}</span>
                 <em>${new Date(msg.created_at).toLocaleString()}</em>
               </div>
             `).join('');
@@ -64,4 +65,5 @@
 </body>
 
 </html>
+
 
