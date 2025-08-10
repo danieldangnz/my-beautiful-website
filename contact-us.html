@@ -28,14 +28,16 @@
 
         <!-- Contact Form -->
         <form id="contactForm">
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
-          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+          <input type="text" id="name" name="name" placeholder="Your Name" required> <br>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>  <br>
+          <textarea id="message" name="message" placeholder="Your Message" required rows="5"></textarea>  <br>
           <button type="submit">Send Message</button>
         </form>
         <div id="formStatus"></div>
         
+        
         <!-- Add this inside your <main> tag or wherever you want to display messages -->
+        <h3>List of existing messages: </h3>
         <div id="messagesContainer"></div>
 
         <script src="JS/main.js" type="module"></script>
@@ -104,6 +106,7 @@
 </body>
 
 </html>
+
 
 
 
