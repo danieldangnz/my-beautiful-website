@@ -25,6 +25,15 @@
 
     <main>
         <h1>CONTACT US PAGE</h1>
+
+        <!-- Contact Form -->
+        <form id="contactForm">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div id="formStatus"></div>
         
         <!-- Add this inside your <main> tag or wherever you want to display messages -->
         <div id="messagesContainer"></div>
@@ -35,6 +44,7 @@
         <script type="module">
           // filepath: c:\Users\ddang\Desktop\2025-RESEARCHES\7-AI-pair programming or AI assistant Coding\w3-demo\index.html
           import { getMessageFromDB } from './JS/database.js';
+          import { insertMessageToDB } from 'JS/database.js';
     
           async function displayMessages() {
             const messages = await getMessageFromDB();
@@ -52,8 +62,37 @@
               </div>
             `).join('');
           }
-    
+          // 
           displayMessages();
+
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const message = document.getElementById('message').value.trim();
+          const statusDiv = document.getElementById('formStatus');
+    
+          if (!name || !email || !message) {
+            statusDiv.textContent = 'Please fill in all fields.';
+            return;
+          }
+    
+          const result = await insertMessageToDB(name, email, message);
+          if (result) {
+            statusDiv.textContent = 'Message sent successfully!';
+            document.getElementById('contactForm').reset();
+            displayMessages();
+          } else {
+            statusDiv.textContent = 'Error sending message. Please try again.';
+          }
+        });
+
+
+
+
+            
         </script>
     
       
@@ -65,5 +104,6 @@
 </body>
 
 </html>
+
 
 
